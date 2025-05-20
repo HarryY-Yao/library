@@ -114,17 +114,20 @@ function clearLibrary() {
 
 
 addButton.addEventListener("click", (event) => {
-    if (readInput.checked) {
-        addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readInput.value);
-    } else {
-        addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, null);
-    }
-    
-    // ensure no duplicates added
-    clearLibrary();
+    if (titleInput.value && authorInput.value && pagesInput.value && Number(pagesInput.value) >= 1) {
+        if (readInput.checked) {
+            addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readInput.value);
+        } else {
+            addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, null);
+        }
 
-    displayLibrary();
-    event.preventDefault();
+
+        // ensure no duplicates added
+        clearLibrary();
+
+        displayLibrary();
+        event.preventDefault();
+    }
 })
 
 
