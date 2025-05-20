@@ -15,6 +15,14 @@ function Book(title, author, pages, read) {
     this.id = crypto.randomUUID();
 }
 
+Book.prototype.toggleReadStatus = function() {
+    if (this.read) {
+        this.read = null;
+    } else {
+        this.read = true;
+    }
+};
+
 function addBookToLibrary(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
@@ -64,6 +72,13 @@ function displayLibrary() {
                     myLibrary.splice(i, 1);
                 }
             }
+
+            clearLibrary();
+            displayLibrary();
+        })
+
+        toggleBtn.addEventListener("click", () => {
+            book.toggleReadStatus();
 
             clearLibrary();
             displayLibrary();
