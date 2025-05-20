@@ -2,11 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <div class="logo"><svg width="800px" height="800px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 1H8V15H5V1Z" fill="#000000"/>
+                <path d="M0 3H3V15H0V3Z" fill="#000000"/>
+                <path d="M12.167 3L9.34302 3.7041L12.1594 15L14.9834 14.2959L12.167 3Z" fill="#000000"/>
+                </svg></div>
+            <h1 class="name">MyLib</h1>
+        </div>
+        <div class="sidebar">
+            <form class="add-menu" action="">
+                <div class="prompt">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+
+
+                <div class="prompt">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author" required>
+                </div>
+                
+                <div class="prompt">
+                    <label for="pages">Number of Pages</label>
+                    <input type="number" id="pages" name="pages" required>
+                </div>
+
+                <div class="prompt">
+                    <label for="read">Read</label>
+                    <input type="checkbox" id="read" name="read">
+                </div>
+
+                <button type="submit" class="add"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.09 20C13.21 20.72 13.46 21.39 13.81 22H6C4.89 22 4 21.11 4 20V4C4 2.9 4.89 2 6 2H18C19.11 2 20 2.9 20 4V13.09C19.67 13.04 19.34 13 19 13C18.66 13 18.33 13.04 18 13.09V4H13V12L10.5 9.75L8 12V4H6V20H13.09M20 18V15H18V18H15V20H18V23H20V20H23V18H20Z" /></svg></button>
+            </form>
+        </div>
+        <div class="library">
+            <div class="card">
+                <div class="img">
+                   <img class="book-img" src="book.svg" alt="book-cover">
+                </div>
+                <div class="info">
+                    <p>The Hobbit</p>
+                    <p>By J.R.R Tolkien</p>
+                    <p>295 pages</p>
+                    <p>Not yet read</p>
+                    <p class="button-container"><button class="rmv">x</button><button class="toggle">Toggle Read Status</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
