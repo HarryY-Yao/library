@@ -7,21 +7,39 @@ const authorInput = document.querySelector("#author");
 const pagesInput = document.querySelector("#pages");
 const readInput = document.querySelector("#read");
 
-function Book(title, author, pages, read) {
+/* function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
     this.id = crypto.randomUUID();
+} */
+
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.id = crypto.randomUUID();
+    }
+
+    toggleReadStatus() {
+        if (this.read) {
+            this.read = null;
+        } else {
+            this.read = true;
+        }
+    }
 }
 
-Book.prototype.toggleReadStatus = function() {
+/* Book.prototype.toggleReadStatus = function() {
     if (this.read) {
         this.read = null;
     } else {
         this.read = true;
     }
-};
+}; */
 
 function addBookToLibrary(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
